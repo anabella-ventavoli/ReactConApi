@@ -1,0 +1,227 @@
+/* Aplica a todo el elemento*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header-links {
+    display:flex;
+    justify-content: space-around; /* sobre el eje horizontal */
+    align-items: center;   /* sobre el eje vertical */
+    background-color: #003B95;
+}
+
+.header-links ul li{
+    list-style-type: none;
+    padding: 20px;
+    display: inline;  
+}
+
+.header-links ul li p{
+    display: inline;
+}
+
+.header-links ul li img {
+    width: 28px;
+    margin-right:10px;
+}
+
+.logo img {
+    width: 80px;
+}
+
+.header-links a {
+    font-size: 14px;
+    text-decoration: none;
+    color:#fff;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+header ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.cover{
+	padding:10px;
+    text-align: center;
+    align-content: center;
+    font-family:Arial, Helvetica, sans-serif;
+    background: url(/img/banner2.png)no-repeat center;
+    background-position: center;
+    overflow: hidden;
+    height: 200px;
+    background-size: cover;
+}
+
+.cover h2 { 
+    font-size: 38px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.cover p { 
+    font-size: 30px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+}
+
+
+nav {
+    background-color: #FD6303;
+}
+
+/* Estilo para la lista*/
+nav ul { 
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+/* Estilo para los elementos de la lista*/
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/*Elimina margen al último elemento de la lista*/
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+/* Estilo para las anclas*/
+.footer-nav ul li a, nav ul li a, .footer-redes ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 10px 15px;
+}
+
+.footer-nav ul li a:hover, nav ul li a:hover, .footer-redes ul li a:hover {
+    background-color: #FD6303;
+    padding: 0px 15px;
+    font-weight: bold;
+    color:#003B95;
+
+}
+
+/* Estilo para body */
+body{
+    font-size: 22px;
+    background-color: #fff;
+    color: #000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.featured-hotels, .featured-campers, .featured-houses {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.hotel, .house, .camper {
+    flex: 0 1 30%;
+    text-align: center;
+}
+
+
+.hotel img, .house img, .camper img {
+    width: 100%;
+    border-radius: 16px;
+    margin-bottom: 15px;
+}
+
+.hotel a, .house a, .camper a {
+    color:#000;
+    text-decoration: none;
+    font-family:Arial, Helvetica, sans-serif;
+    display: block;
+    text-align: left;
+}
+
+.nombre-accom {
+    text-shadow: 1px 1px 2px black;
+}
+
+.lugar-accom {
+    font-size: 14px;
+    text-shadow: 0px 1px 1px black;
+}
+
+.price {
+    margin-top: 5px;
+    font-size: 14px;
+    float: right;
+}
+
+.container {
+    margin-top: 50px;
+}
+.aboutus {
+    text-align: justify;
+
+}
+
+
+
+/* Efecto para expandir imagen al pasar el cursor */
+.hotel img:hover, .house img:hover, .camper img:hover {
+    transform: scale(1.1); 
+}
+
+.footer-redes {
+    background-color: #FD6303;
+    color: white;
+    padding: 10px 0px;
+    margin-top:100px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-redes ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.footer-redes ul li {
+    display: inline-block;
+    margin-left: 5px;
+} 
+
+.footer-redes ul li img {
+    width: 25px;
+}
+
+.footer-nav {
+    background-color: #FD6303;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.footer-nav ul li{
+    display: inline-block;
+    margin: 10px;
+}
+
+
+.copyright {
+    background-color: #003B95;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+    margin-bottom:2px;
+    margin-top:2px;
+}
