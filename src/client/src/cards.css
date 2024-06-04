@@ -1,0 +1,73 @@
+/* Cards */
+.contenedor-alojamiento {
+    width: 30%;
+    margin: 50px 10px;
+    justify-content: space-around;
+    background-color: #fff;
+    box-shadow: 0 3px 13px 1px rgb(0 0 0 / 9%);
+    padding: 2px 5px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.contenedor-alojamiento img {
+    width:100%;
+    height: auto;
+}
+
+.contenedor-alojamiento p {
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.nombre-alojamiento p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.bajada-alojamiento p {
+    font-size: 14px;
+   font-weight: bold; 
+    color: #FD6303;
+    font-size: 14px;
+}
+
+.valor-alojamiento p {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.contenedor-alojamiento img:hover{
+    transform: scale(1.1);
+    transition-duration: 500ms;
+    text-decoration: solid;
+}
+
+.imagen-alojamiento {
+    height: 300px;
+    border-radius: 10px;
+    padding: 2px 5px;
+}
+
+.nombre-alojamiento {
+    font-size: 1.3rem;
+    padding: 2px 5px;
+}
+
+.bajada-alojamiento {
+    font-size: 1.9 rem;
+    text-align: start;
+    padding: 2px 5px;
+}
+
+.valor-alojamiento {
+    font-size: 1.2rem;
+    text-align: end;
+    padding: 2px 5px;
+}
+
+.featured-home {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}

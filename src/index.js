@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 const PORT = 3001;
 
 app.use(cors({
-  origin: 'http://localhost:3000', // Permite solicitudes desde este origen
+  origin: 'http://localhost:5173', // Permite solicitudes desde este origen
 }));
 
 //middlewares

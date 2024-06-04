@@ -7,9 +7,11 @@ import Nav from './Header/Nav';
 import FooterRedes from './Footer/FooterRedes';
 import FooterNav from './Footer/FooterNav';
 import Copyright from './Footer/Copyright';
-import TipoAlojamiento from './Forms/TipoAlojamiento'
 import Nosotros from './Nosotros';
 import Contacto from './Contacto';
+import ListTiposAlojamiento from './Forms/ListTiposAlojamiento';
+import AddTiposAlojamiento from './Forms/AddTiposAlojamiento';
+import EditTiposAlojamiento from './Forms/EditTiposAlojamiento';
 
 function App() {
   
@@ -25,9 +27,11 @@ function App() {
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/administracion" element={<TipoAlojamiento />} />
             <Route path="/nosotros" element={<Nosotros />} />
             <Route path="/contacto" element={<Contacto />} />
+            <Route path="/addtiposalojamiento" element={<AddTiposAlojamiento />} />
+            <Route path="/listtiposalojamiento" element={<ListTiposAlojamiento />} />
+            <Route path="/edittiposalojamiento" element={<EditTiposAlojamiento/>} />
           </Routes>
         </div>
         <footer>

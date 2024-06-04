@@ -4,7 +4,7 @@ const Nosotros = () => {
   return (
     <div className="container">
         <div className="aboutus">
-            <h2>Sobre TheCozyCone</h2>
+            <h1>Sobre TheCozyCone</h1>
             <p> 
                 TheCozyCone se fundó en 1999, en Argentina, y ha pasado de ser una pequeña start-up argentina a convertirse en el portal de alojamientos #1 de latinoamérica.
                 Estamos en el mercado hace más de 20 años y cada año sumamos más: más hoteles, más casas particulares, más cabañas, más servicios; siempre más y más. 

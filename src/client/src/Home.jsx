@@ -1,9 +1,11 @@
 //import React from 'react'
+import { Lista } from "./Cards/Lista";
+import './cards.css';
 
 const Home = () => {
   return (
-    <div>
-      <h2>This is the home page!!</h2>
+    <div className="container featured-home">
+      <Lista />
     </div>
   );
 }
