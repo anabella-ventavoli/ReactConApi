@@ -34,7 +34,7 @@ const TipoAlojamiento = () => {
 
   return (
     <div className="form-container">
-      <h1 className="titleform">Cargar nuevo tipo de alojamiento</h1>
+      <h2 className="titleform">Cargar nuevo tipo de alojamiento</h2>
       <form onSubmit={enviar}>
         <div>
           <label htmlFor="descripcion">Descripción</label>

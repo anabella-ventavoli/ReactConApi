@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
-
-
 const ListTiposAlojamiento = () => {
-
   const [tiposAlojamiento, setTiposAlojamiento] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -25,33 +22,22 @@ const ListTiposAlojamiento = () => {
   return (
     <div className="table-container">
       <h1>Tabla Tipos de Alojamiento</h1>
-
       <table>
-
         <thead>
-
           <tr>
             <th>ID</th>
             <th>Descripción</th>
-            <th>Operación</th>
           </tr>
-
         </thead>
-         
         <tbody>
           {tiposAlojamiento.map(tipo => (
             <tr key={tipo.id} >
-
               <td>{tipo.idTipoAlojamiento}</td>
               <td>{tipo.Descripcion}</td>
-              <td><button>Editar</button><button>Eliminar</button></td>
-
             </tr>
           ))}
         </tbody>
-
       </table>
-      
     </div>
   );
 };

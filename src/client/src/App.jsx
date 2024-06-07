@@ -9,9 +9,10 @@ import FooterNav from './Footer/FooterNav';
 import Copyright from './Footer/Copyright';
 import Nosotros from './Nosotros';
 import Contacto from './Contacto';
-import ListTiposAlojamiento from './Forms/ListTiposAlojamiento';
+import ListTiposAlojamiento from './pages/ListTiposAlojamiento';
 import AddTiposAlojamiento from './Forms/AddTiposAlojamiento';
-import EditTiposAlojamiento from './Forms/EditTiposAlojamiento';
+import Administracion from './pages/Administracion';
+import EditTiposAlojamiento from './pages/EditTiposAlojamiento';
 
 function App() {
   
@@ -30,6 +31,7 @@ function App() {
             <Route path="/nosotros" element={<Nosotros />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/addtiposalojamiento" element={<AddTiposAlojamiento />} />
+            <Route path="/administracion" element={<Administracion />} />
             <Route path="/listtiposalojamiento" element={<ListTiposAlojamiento />} />
             <Route path="/edittiposalojamiento" element={<EditTiposAlojamiento/>} />
           </Routes>

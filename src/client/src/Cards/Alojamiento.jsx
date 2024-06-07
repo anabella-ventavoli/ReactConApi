@@ -8,7 +8,7 @@ export function Alojamiento(props) {
         <a href={props.url}>
           <img
           className='imagen-alojamiento'
-          src={`./img/${props.imagen}.jpg`}
+          src={`./img/${props.imagen}`}
           alt={`Foto de ${props.nombre}`} /> </a>
       </p>
       <div  className='nombre-alojamiento'>
