@@ -13,6 +13,7 @@ import ListTiposAlojamiento from './pages/ListTiposAlojamiento';
 import AddTiposAlojamiento from './Forms/AddTiposAlojamiento';
 import Administracion from './pages/Administracion';
 import EditTiposAlojamiento from './pages/EditTiposAlojamiento';
+import AltaAlojamiento from './Forms/AltaAlojamiento';
 
 function App() {
   
@@ -34,6 +35,7 @@ function App() {
             <Route path="/administracion" element={<Administracion />} />
             <Route path="/listtiposalojamiento" element={<ListTiposAlojamiento />} />
             <Route path="/edittiposalojamiento" element={<EditTiposAlojamiento/>} />
+            <Route path="/altaalojamiento" element={<AltaAlojamiento/>} />
           </Routes>
         </div>
         <footer>

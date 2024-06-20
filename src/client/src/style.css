@@ -183,81 +183,20 @@ td {
     border: 2px solid #000;
 }
 
-.form-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 0 20px;
-    background-color: #FD6303;
-    border: 2px solid #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    color: #fff; 
-}
-
-.form-container div {
-    margin-bottom:15px;
-    margin-top: 10px;
-}
-
-.form-container label {
-    font-size: 16px;
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.form-container input,
-.form-container textarea {
-    padding: 5px;
-    width: 100%;
-}
 
 .mensaje textarea {
     height: 100px;
+    min-height: 100px;
+    max-height: 400px;
+
     max-width: 100%;
+    min-width: 100%;
 }
 
-.titleform{
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    font-size: 18px;
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.button-container {
-    display: flex;
-    justify-content: center;
-}
 
 .administracion {
     display: flex;
     align-items: center;
-
-}
-
-.form-container button,
-.table-container button {
-    width: 80px;
-    height: 30px;
-    background-color: #003B95;
-    border: 1px solid #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    color: #fff;
-    padding: 5px;
-}
-
-.orange-button button{
-    width: 100px;
-    height: 45px;
-    background-color: #FD6303;
-    border: 1px solid #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    color: #fff;
-    padding: 5px;
 }
 
 

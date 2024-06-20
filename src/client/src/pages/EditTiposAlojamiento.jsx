@@ -52,10 +52,11 @@ const EditTiposAlojamiento = () => {
   
 
   return (
-    <div className="table-container">
-      <h1>Tipos de Alojamiento</h1>
+    <div className="container table-container">
+      <h2>Tipos de Alojamiento</h2>
 
       <table>
+
         <thead> 
           <tr>
             <th>ID</th>
