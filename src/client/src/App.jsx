@@ -9,11 +9,12 @@ import FooterNav from './Footer/FooterNav';
 import Copyright from './Footer/Copyright';
 import Nosotros from './Nosotros';
 import Contacto from './Contacto';
-import ListTiposAlojamiento from './pages/ListTiposAlojamiento';
 import AddTiposAlojamiento from './Forms/AddTiposAlojamiento';
 import Administracion from './pages/Administracion';
-import EditTiposAlojamiento from './pages/EditTiposAlojamiento';
 import AltaAlojamiento from './Forms/AltaAlojamiento';
+import AlojamientoDetalle from './pages/AlojamientoDetalle';
+import EditAlojamientos from './pages/EditAlojamientos';
+
 
 function App() {
   
@@ -33,9 +34,10 @@ function App() {
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/addtiposalojamiento" element={<AddTiposAlojamiento />} />
             <Route path="/administracion" element={<Administracion />} />
-            <Route path="/listtiposalojamiento" element={<ListTiposAlojamiento />} />
-            <Route path="/edittiposalojamiento" element={<EditTiposAlojamiento/>} />
-            <Route path="/altaalojamiento" element={<AltaAlojamiento/>} />
+            <Route path="/altaalojamiento" element={<AltaAlojamiento />} />
+            <Route path="/alojamientodetalle" element={<AlojamientoDetalle />} />
+            <Route path="/editalojamientos" element={<EditAlojamientos />} />
+
           </Routes>
         </div>
         <footer>

@@ -20,7 +20,7 @@ const ListTipos = () => {
     fetchData();
   }, []);
 
-  return  tiposAlojamiento;
+  return  [tiposAlojamiento, setTiposAlojamiento];
 };
 
 export default ListTipos;

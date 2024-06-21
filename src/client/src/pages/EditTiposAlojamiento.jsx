@@ -1,9 +1,9 @@
 import { useState } from "react";
-import UseFetchAlojamientos from "./UseFetchAlojamientos";
+import ListTipos from "./ListTipos";
 import DeleteTipoAlojamiento from "./DeleteTipoAlojamiento";
 
 const EditTiposAlojamiento = () => {
-  const [tiposAlojamiento, setTiposAlojamiento] = UseFetchAlojamientos([]);
+  const [tiposAlojamiento, setTiposAlojamiento] = ListTipos([]);
   const [editIndice, setEditIndice] = useState(null);
   const [editDescripcion, setEditDescripcion] = useState("");
 
