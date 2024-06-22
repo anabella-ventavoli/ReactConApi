@@ -1,5 +1,5 @@
 
-const DeleteAlojamiento = ({ id, onDelete }) => {
+const DeleteAlojamiento = ({id, onDelete}) => {
 
   const handleDeleteClick = async () => {
     try {
@@ -18,7 +18,7 @@ const DeleteAlojamiento = ({ id, onDelete }) => {
   };
 
   return (
-    <button onClick={handleDeleteClick}>Eliminar</button>
+    <button onClick={handleDeleteClick}>Eliminar selección</button>
   );
 };
 

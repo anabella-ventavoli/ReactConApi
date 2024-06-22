@@ -13,7 +13,7 @@ import AddTiposAlojamiento from './Forms/AddTiposAlojamiento';
 import Administracion from './pages/Administracion';
 import AltaAlojamiento from './Forms/AltaAlojamiento';
 import AlojamientoDetalle from './pages/AlojamientoDetalle';
-import EditAlojamientos from './pages/EditAlojamientos';
+import EditAlojamientos from './Forms/EditAlojamientos';
 
 
 function App() {

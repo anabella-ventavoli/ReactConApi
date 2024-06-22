@@ -20,7 +20,7 @@ const ListAlojamientos = () => {
     fetchData();
   }, []);
 
-  return  [alojamientos, setAlojamientos];
+  return  [alojamientos, setAlojamientos]
 };
 
 export default ListAlojamientos;

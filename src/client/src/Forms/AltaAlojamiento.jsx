@@ -1,11 +1,17 @@
 import { useNavigate } from 'react-router-dom';
-import ListTipos from '../pages/ListTipos';
-import ListServicios from '../pages/ListServicios';
 import './forms.css';
+
+//pages
+import ListServicios from '../pages/ListServicios';
+//import tiposAlojamiento from '../pages/FetchOnlyTipos';
+// cambie esto sacando los parentesis tiposAlojamiento().map
+// agregue const [tiposAlojamiento] = ListTipos([])
 import createAlojamiento from '../pages/CreateAlojamiento'; 
+import ListTipos from '../pages/ListTipos'
 
 const AltaAlojamiento = () => {
   const navigate = useNavigate();
+  const [tiposAlojamiento] = ListTipos([])
 
   const handleAltaButton = async (event) => {
     event.preventDefault();  // hace que no se recargue la pag
@@ -60,7 +66,7 @@ const AltaAlojamiento = () => {
               <div className="div-container">
                 <label htmlFor="type">Tipo Alojamiento</label>
                 <select id="type" required>
-                  {ListTipos().map(tipo => (
+                  {tiposAlojamiento.map(tipo => (
                     <option key={tipo.idTipoAlojamiento} value={tipo.idTipoAlojamiento}>{tipo.Descripcion}</option>
                   ))}
                 </select>
@@ -82,7 +88,7 @@ const AltaAlojamiento = () => {
                 <input type="number" id="inputBath" required />
               </div>
               <div className="div-container">
-                <label htmlFor="inputPictures">Subir imágenes</label>
+                <label htmlFor="inputPictures">Subir imágen</label>
                 <input type="file" id="inputPictures" name="file" />
               </div>
             </div>
@@ -93,7 +99,7 @@ const AltaAlojamiento = () => {
                 <textarea id="inputDescription" type="text" maxLength="300" placeholder="Describa el alojamiento aquí" required autoComplete="off" autoFocus />
               </div>
               <div>
-                <label>Servicios</label>
+                <p>Servicios</p>
                 <div className="radio-container">
                   {ListServicios().map(servicio => (
                     <label key={servicio.idServicio}>{servicio.Nombre}
@@ -108,7 +114,7 @@ const AltaAlojamiento = () => {
                 <input id="inputPrice" placeholder="Ingrese el precio por dia" required />
               </div>
 
-              <label>Disponible</label>
+              <p>Disponible</p>
               <div className="radio-container">
                 <label htmlFor="si">SI
                   <input type="radio" id="si" name="available" value='Disponible' required />

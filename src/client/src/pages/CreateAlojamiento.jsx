@@ -1,4 +1,4 @@
-// createAlojamiento.js
+
 const createAlojamiento = async (nuevoAlojamiento) => {
     try {
       const response = await fetch("http://localhost:3001/alojamiento/createAlojamiento", {

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ListTipos from "./ListTipos";
-import DeleteTipoAlojamiento from "./DeleteTipoAlojamiento";
+import ListTipos from "../pages/ListTipos";
+import DeleteTipoAlojamiento from "../pages/DeleteTipoAlojamiento";
 
 const EditTiposAlojamiento = () => {
   const [tiposAlojamiento, setTiposAlojamiento] = ListTipos([]);
