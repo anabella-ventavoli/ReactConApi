@@ -17,7 +17,13 @@ const Administracion = () => {
                 <button onClick={() => navigate('/AddTiposAlojamiento')}>Crear Tipo</button>
             </div>
             <div className='orange-button'>
+                <button onClick={() => navigate('/altaalojamiento')}>Crear Alojamiento</button>
+            </div>
+            <div className='orange-button'>
                 <button onClick={() => navigate('/editalojamientos')}>Administrar Alojamientos</button>
+            </div>
+            <div className='orange-button'>
+                <button onClick={() => navigate('/administrarServicios')}>Administrar Servicios</button>
             </div>
         </div>
   </div>

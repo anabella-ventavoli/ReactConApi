@@ -10,6 +10,7 @@ import createAlojamiento from '../pages/CreateAlojamiento';
 import ListTipos from '../pages/ListTipos'
 
 const AltaAlojamiento = () => {
+  const [servicios] = ListServicios([])
   const navigate = useNavigate();
   const [tiposAlojamiento] = ListTipos([])
 
@@ -24,7 +25,12 @@ const AltaAlojamiento = () => {
     const dormitorios = document.getElementById('inputBed').value;
     const banios = document.getElementById('inputBath').value;
     const precio = document.getElementById('inputPrice').value;
-    const radios = document.getElementsByName('available');
+    const radios = document.getElementsByName('available'); 
+
+    let descripTipoAloj = ''
+    tiposAlojamiento.forEach(tipo => {
+      tipo.idTipoAlojamiento == tipoSeleccionado ? descripTipoAloj = tipo.Descripcion : ''});
+
     let radioSeleccionado = "";
     for (let i = 0; i < radios.length; i++) {
       if (radios[i].checked) {
@@ -32,11 +38,12 @@ const AltaAlojamiento = () => {
         break;
       }
     }
-
+   
     const nuevoAlojamiento = {
       "Titulo": titulo,
       "Descripcion": descripcion,
-      "TipoAlojamiento": tipoSeleccionado,
+      "idTipoAlojamiento": parseInt(tipoSeleccionado),
+      "TipoAlojamiento": descripTipoAloj,
       "Latitud": parseFloat(latitud),
       "Longitud": parseFloat(longitud),
       "PrecioPorDia": parseFloat(precio),
@@ -54,6 +61,7 @@ const AltaAlojamiento = () => {
     }
   };
 
+  
   return (
     <div>
       <div className="form-container">
@@ -73,11 +81,11 @@ const AltaAlojamiento = () => {
               </div>
               <div className="div-container">
                 <label htmlFor="inputLatitud">Latitud</label>
-                <input type="text" id="inputLatitud" placeholder="Ingrese la latitud" required />
+                <input type="number" min="0" max="90" step=".00000001" id="inputLatitud" placeholder="Ingrese la latitud" required />
               </div>
               <div className="div-container">
                 <label htmlFor="inputLongitud">Longitud</label>
-                <input type="text" id="inputLongitud" placeholder="Ingrese la longitud" required />
+                <input type="number" min="0" max="180" step=".00000001" id="inputLongitud" placeholder="Ingrese la longitud" required />
               </div>
               <div className="div-container">
                 <label htmlFor="inputBed">Cantidad de Dormitorios</label>
@@ -88,8 +96,8 @@ const AltaAlojamiento = () => {
                 <input type="number" id="inputBath" required />
               </div>
               <div className="div-container">
-                <label htmlFor="inputPictures">Subir imágen</label>
-                <input type="file" id="inputPictures" name="file" />
+                <label htmlFor="inputUrl">Ingresar Url</label>
+                <input type="text" id="inputUrl" name="inputUrl" />
               </div>
             </div>
 
@@ -101,7 +109,7 @@ const AltaAlojamiento = () => {
               <div>
                 <p>Servicios</p>
                 <div className="radio-container">
-                  {ListServicios().map(servicio => (
+                  {servicios.map(servicio => (
                     <label key={servicio.idServicio}>{servicio.Nombre}
                       <input type="checkbox" value={servicio.idServicio} />
                     </label>

@@ -15,10 +15,11 @@ export function Alojamiento(props) {
         <p><strong>{props.nombre}</strong></p>
       </div>
       <div className='bajada-alojamiento'>
+        <p>Ubicación: </p>
         <p>{props.ubicacion}</p>
       </div>
       <div className='valor-alojamiento'>
-        <p>{props.valor}</p>
+        <p>$ {props.valor}</p>
       </div>
   </div>
   );

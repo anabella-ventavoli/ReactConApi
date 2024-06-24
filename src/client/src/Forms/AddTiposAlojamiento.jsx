@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 
 const TipoAlojamiento = () => {
 
@@ -21,6 +21,7 @@ const TipoAlojamiento = () => {
       });
       if (response.ok) {
         alert('Tipo de alojamiento creado con éxito.')
+        setDescripcion('')
       }
       else {
         alert('Error al crear el tipo de alojamiento.')

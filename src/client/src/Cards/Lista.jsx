@@ -1,15 +1,20 @@
 import { Alojamiento } from './Alojamiento.jsx';
-import { datos } from "../Datos/Alojamientos.js";
+//import { datos } from "../Datos/Alojamientos.js";
+import ListAlojamientos from '../pages/ListAlojamientos.jsx'
+
 
 export function Lista() {
-    const lista = datos.map((dato, index) =>
+
+    const [alojamientos] = ListAlojamientos();
+
+    const lista = alojamientos.map((alojamiento, index) =>
         <Alojamiento
             key = {index}
-            imagen = {dato.imagen}
-            nombre = {dato.nombre}
-            ubicacion = {dato.ubicacion}
-            valor = {dato.valor}
-            url = {dato.url}
+            imagen = {alojamiento.imagen}
+            nombre = {alojamiento.Titulo}
+            ubicacion = {alojamiento.Latitud + " " + alojamiento.Longitud}
+            valor = {alojamiento.PrecioPorDia}
+            url = {alojamiento.url}
         />
     );
     return lista;

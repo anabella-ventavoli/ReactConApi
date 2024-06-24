@@ -21,7 +21,7 @@ const ListServicios = () => {
     fetchData();
   }, []);
 
-  return  servicios;
+  return  [servicios, setServicios];
 };
 
 export default ListServicios;

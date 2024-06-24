@@ -4,8 +4,12 @@ import './forms.css';
 //pages
 import DeleteAlojamiento from "../pages/DeleteAlojamiento";
 import ListAlojamientos from '../pages/ListAlojamientos';
+//agrego
+import ListTipos from '../pages/ListTipos'
 
 const EditAlojamientos = () => {
+  const [tiposAlojamiento] = ListTipos([]) //agrego
+
   const [alojamientoEdit, setAlojamientoEdit] = useState({
     'idAlojamiento': 0,
     'Titulo': '',
@@ -17,7 +21,8 @@ const EditAlojamientos = () => {
     'TipoAlojamiento': 0,
     'Estado': ''
   });
-  const [alojamientos] = ListAlojamientos()
+
+  const [alojamientos, setAlojamientos] = ListAlojamientos();
   const [idSeleccionado, setIdSeleccionado] = useState(null);
   const [titulo, setTitulo] = useState("");
   const [descripcion, setDescripcion] = useState("");
@@ -31,7 +36,7 @@ const EditAlojamientos = () => {
   
 
   const handleDelete = (id) => {
-    setAlojamientoEdit ((alojamientosActuales) =>
+    setAlojamientos ((alojamientosActuales) =>
       alojamientosActuales.filter((alojamiento) => alojamiento.idAlojamiento !== id)
     );
   };
@@ -123,10 +128,14 @@ const EditAlojamientos = () => {
     if (nuevoDormis !== '') nuevoAlojamiento.CantidadDormitorios = nuevoDormis;
     if (nuevoBanios !== '') nuevoAlojamiento.CantidadBanios = nuevoBanios;
     if (nuevoEstado !== '') nuevoAlojamiento.Estado = nuevoEstado;
-    if (nuevoTipoAloj !== '') nuevoAlojamiento.TipoAlojamiento = nuevoTipoAloj;
-  
-    console.log('Updating alojamiento:', nuevoAlojamiento);
-  
+    
+    tiposAlojamiento.forEach(tipo => {
+      if (nuevoTipoAloj.toLowerCase() === tipo.Descripcion) {
+        nuevoAlojamiento.TipoAlojamiento = nuevoTipoAloj.toLowerCase();
+        nuevoAlojamiento.idTipoAlojamiento = tipo.idTipoAlojamiento }
+    })
+
+    console.log('Alojamiento actualizado:', nuevoAlojamiento); 
     try {
       const response = await fetch(`http://localhost:3001/alojamiento/putAlojamiento/${id}`, {
         method: 'PUT',
@@ -147,7 +156,6 @@ const EditAlojamientos = () => {
         setNuevoBanios('');
         setNuevoEstado('');
         setNuevoTipoAloj('');
-        setIdSeleccionado('');
         setTitulo('');
         setBanios('');
         setDescripcion('');
@@ -157,6 +165,14 @@ const EditAlojamientos = () => {
         setPrecio('');
         setEstado('');
         setTipoAloj('');
+
+        //Actualizo lista de alojamientos luego de modificarlo
+        const actualizarAlojamientos = alojamientos.map((alojamiento) =>
+          alojamiento.idAlojamiento === idSeleccionado ? { ...alojamiento, ...nuevoAlojamiento }  : alojamiento
+        );
+        setAlojamientos(actualizarAlojamientos);
+        setIdSeleccionado('');
+
       } else {
         alert("Error al actualizar el alojamiento.");
         console.log('Response status:', response.status);
@@ -172,7 +188,7 @@ const EditAlojamientos = () => {
   return (
     <div>
       <div className="container table-container">
-      <h2>Editar un alojameinto</h2>
+      <h2>Editar un alojamiento</h2>
         <table>
           <thead>
             <tr>
@@ -247,7 +263,7 @@ const EditAlojamientos = () => {
                     id="nuevoEstado" 
                     onChange={(e) => handleChange(e.target.value, 'estado')} /></td>
               <td><input 
-                    type="number" 
+                    type="text" 
                     value={nuevoTipoAloj}
                     id="nuevoTipoAlojamiento" 
                     onChange={(e) => handleChange(e.target.value, 'tipoAloj')} /></td>
@@ -260,7 +276,7 @@ const EditAlojamientos = () => {
       </div>
 
       <div className="container table-container">
-        <h2>Todos los Alojamientos</h2>
+        <h2>Lista Alojamientos</h2>
         <table>
           <thead> 
             <tr>

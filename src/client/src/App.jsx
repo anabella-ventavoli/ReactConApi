@@ -14,8 +14,7 @@ import Administracion from './pages/Administracion';
 import AltaAlojamiento from './Forms/AltaAlojamiento';
 import AlojamientoDetalle from './pages/AlojamientoDetalle';
 import EditAlojamientos from './Forms/EditAlojamientos';
-
-
+import Servicios2 from './pages/Servicios2'
 function App() {
   
   return (
@@ -37,7 +36,7 @@ function App() {
             <Route path="/altaalojamiento" element={<AltaAlojamiento />} />
             <Route path="/alojamientodetalle" element={<AlojamientoDetalle />} />
             <Route path="/editalojamientos" element={<EditAlojamientos />} />
-
+            <Route path="/administrarServicios" element ={<Servicios2/>} />
           </Routes>
         </div>
         <footer>
