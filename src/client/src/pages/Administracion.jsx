@@ -25,6 +25,9 @@ const Administracion = () => {
             <div className='orange-button'>
                 <button onClick={() => navigate('/administrarServicios')}>Administrar Servicios</button>
             </div>
+            <div className='orange-button'>
+                <button onClick={() => navigate('/imagenes')}>Imágenes</button>
+            </div>
         </div>
   </div>
   )

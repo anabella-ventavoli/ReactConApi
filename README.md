@@ -1,3 +1,5 @@
+Dentro de la carpeta ReactConApi se encuentra el archivo con la base de datos. Se llama idw.sql
+
 # Integrantes
 Bonanno, Valentina
 Cáceres, Marcos David
