@@ -106,11 +106,11 @@ const EditAlojamientos = () => {
       case 'banios':
           setNuevoBanios(value)
         break;
-      case 'estado':
-          setNuevoEstado(value)
-        break;
       case 'tipoAloj':
           setNuevoTipoAloj(value)
+        break;
+      case 'estado':
+          setNuevoEstado(value)
         break;
       default:
         break;
@@ -262,7 +262,8 @@ const EditAlojamientos = () => {
                     value={nuevoEstado}
                     id="nuevoEstado" 
                     onChange={(e) => handleChange(e.target.value, 'estado')} /></td>
-              <td><input 
+              <td>
+                  <input
                     type="text" 
                     value={nuevoTipoAloj}
                     id="nuevoTipoAlojamiento" 

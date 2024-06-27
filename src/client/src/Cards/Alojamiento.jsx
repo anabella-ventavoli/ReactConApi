@@ -1,7 +1,9 @@
-//import React from "react";
-//import '../hojas-de-estilo/Testimonio.css';
+import ListImagenes from "../pages/ListImagenes";
 
 export function Alojamiento(props) {
+  const [imagenes] = ListImagenes([])
+
+
   return (
     <div className='contenedor-alojamiento'>
       <p>
@@ -19,7 +21,7 @@ export function Alojamiento(props) {
         <p>{props.ubicacion}</p>
       </div>
       <div className='valor-alojamiento'>
-        <p>$ {props.valor}</p>
+        <p>$ {props.valor} / día</p>
       </div>
   </div>
   );

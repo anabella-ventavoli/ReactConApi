@@ -9,7 +9,7 @@ const Nav = () => {
                 <li><Link to="/administracion">Administración</Link></li>
                 <li><Link to="/alpinas">Alpinas</Link></li>
                 <li><Link to="/cabanias">Cabañas</Link></li>
-                <li><Link to="/hoteles">Hoteles</Link></li>
+                <li><Link to="/departamentos">Departamentos</Link></li>
                 <li><Link to="/motorhomes">Motorhomes</Link></li>
                 <li><Link to="/particulares">Particulares</Link></li>
                 <li><Link to="/contacto">Contacto</Link></li>

@@ -20,6 +20,7 @@ const createAlojamiento = async (nuevoAlojamiento) => {
       console.error("Error:", error);
       return false;
     }
+    
   };
   
   export default createAlojamiento;

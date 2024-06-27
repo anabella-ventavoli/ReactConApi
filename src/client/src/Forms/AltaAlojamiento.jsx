@@ -2,15 +2,11 @@ import { useNavigate } from 'react-router-dom';
 import './forms.css';
 
 //pages
-import ListServicios from '../pages/ListServicios';
-//import tiposAlojamiento from '../pages/FetchOnlyTipos';
-// cambie esto sacando los parentesis tiposAlojamiento().map
-// agregue const [tiposAlojamiento] = ListTipos([])
+
 import createAlojamiento from '../pages/CreateAlojamiento'; 
 import ListTipos from '../pages/ListTipos'
 
 const AltaAlojamiento = () => {
-  const [servicios] = ListServicios([])
   const navigate = useNavigate();
   const [tiposAlojamiento] = ListTipos([])
 
@@ -55,7 +51,7 @@ const AltaAlojamiento = () => {
     const success = await createAlojamiento(nuevoAlojamiento);
 
     if (success) {
-      navigate('/alojamientodetalle'); // Redireccionarme a esta pag
+      navigate('/servicioalojamiento'); // Redireccionarme a esta pag
     } else {
       console.error("Error al crear el alojamiento");
     }
@@ -104,17 +100,7 @@ const AltaAlojamiento = () => {
             <div className="column">
               <div className="desc">
                 <label htmlFor="inputDescription">Descripción</label>
-                <textarea id="inputDescription" type="text" maxLength="300" placeholder="Describa el alojamiento aquí" required autoComplete="off" autoFocus />
-              </div>
-              <div>
-                <p>Servicios</p>
-                <div className="radio-container">
-                  {servicios.map(servicio => (
-                    <label key={servicio.idServicio}>{servicio.Nombre}
-                      <input type="checkbox" value={servicio.idServicio} />
-                    </label>
-                  ))}
-                </div>
+                <textarea id="inputDescription" type="text" maxLength="600" placeholder="Describa el alojamiento aquí" required autoComplete="off" autoFocus />
               </div>
 
               <div className="div-container">

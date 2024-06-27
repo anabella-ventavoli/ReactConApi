@@ -12,9 +12,10 @@ const CreateServicio = () => {
   const [editIndice, setEditIndice] = useState(null)
   const [editNombre, setEditNombre] = useState("")
 
-  const handleEdit = (indiceServicio, nombre) => {
+  const handleEdit = (indiceServicio, nombre) => {        
     setEditIndice(indiceServicio);
     setEditNombre(nombre);
+    console.log ("EL indice del servicio", nombre, "es", indiceServicio)
   };
 
   const handleInputChange = async (e) => {
@@ -43,13 +44,13 @@ const CreateServicio = () => {
         console.log("Error al actualizar nombre del servicio");
       }
     } catch (error) {
-      console.log("Error:", error);
+      console.log("Error:", error); }
     }
   }
-  };
 
   const handleAgregarButton = async (e) => {
     e.preventDefault();
+    console.log(nombre, "antes de agregar al json")
     const nuevoServicio = {
       "Nombre": nombre.toLowerCase()
     };
@@ -74,21 +75,22 @@ const CreateServicio = () => {
       } catch (error) {
       console.log("Se produjo el error:",error);
     }
-  };
+  }
 
   const handleDelete = (id) => {
     setServicios((serviciosActuales) => 
       serviciosActuales.filter((servicio) => servicio.idServicio !== id)
     );
-  };
+  }
 
   return (
-    <div>
-      <div className='container'>
-        <div className='form-container'>
-          <h2>Crear Servicio</h2>
-          <form onSubmit={handleAgregarButton}>
-            <label>Nombre del servicio:</label>
+    <div className="container">
+    <div className="column-container">
+      <div className='column'>
+        <h2>Crear Servicio</h2>
+        <div className='form-createServicio'>
+          <form id="createServicio" onSubmit={handleAgregarButton}>
+            <label htmlFor="nombreServicio">Nombre del servicio:</label>
             <input 
                 type="text" 
                 id="nombreServicio" 
@@ -96,47 +98,49 @@ const CreateServicio = () => {
                 value={nombre}
                 name="nombreServicio" 
                 onChange={(e) => setNombre (e.target.value)}/>
-                
             <button type="submit">Agregar</button>
           </form>
         </div>
-        <h2>Lista de servicios</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Operación</th>
-            </tr>
-          </thead>
-          <tbody>
-            {servicios.map((servicio, indiceServicio) => (
-              <tr key={servicio.idServicio}>
-                <td>
-                  {editIndice === indiceServicio ? (
-                    <input 
-                      type="text"
-                      value={editNombre}
-                      onChange={handleInputChange}
-                      onKeyDown={(e) => handleKeyDown(e, servicio.idServicio)}
-                    />
-                    ) : (
-                      servicio.Nombre
-                    )
-                }
-                </td>
-                <td>
-                  <button onClick={() => handleEdit(indiceServicio, servicio.Nombre)}>Editar</button>
-                  <DeleteServicios id={servicio.idServicio} onDelete={handleDelete} />
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
       </div>
+        <div className="column">
+          <h2>Servicios disponibles</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {servicios.map((servicio, indiceServicio) => (
+                <tr key={indiceServicio}>
+                  <td>
+                    {editIndice === indiceServicio ? (
+                      <input 
+                        type="text"
+                        value={editNombre}
+                        onChange={handleInputChange}
+                        onKeyDown={(e) => handleKeyDown(e, servicio.idServicio)}
+                      />
+                      ) : (
+                        servicio.Nombre
+                      )
+                  }
+                  </td>
+          
+                  <td>
+                    <button onClick={() => handleEdit(indiceServicio, servicio.Nombre)}>Editar</button>
+                    <DeleteServicios id={servicio.idServicio} onDelete={handleDelete} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
     </div>
-      
-    
-  )
-}
+    </div>    
+  );
+};
 
-export default CreateServicio
+export default CreateServicio;
